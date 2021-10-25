@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToMany, JoinTable} from "typeorm";
 import { IsNotEmpty } from "class-validator";
 import { Trip } from "./Trip";
 import { User } from "./User";
@@ -11,12 +11,14 @@ export class Reservation {
 
     @Column()
     @IsNotEmpty()
-    @OneToOne(type => User) @JoinColumn() 
+    @ManyToMany(() => User)
+    @JoinTable()
     id_user: number;
 
     @Column()
     @IsNotEmpty()
-    @OneToOne(type => Trip) @JoinColumn() 
+    @ManyToMany(() => Trip)
+    @JoinTable()
     id_trip: number;
 
     @Column()
