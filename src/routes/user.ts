@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/', [checkJwt, checkRole(0)], UserController.getAll);
 
-router.get('/:id', [checkJwt, checkRole(0)], UserController.getById);
+router.get('/:id', [checkJwt], UserController.getById);
 
 router.post('/', [checkJwt, checkRole(0)], UserController.newUser);
 

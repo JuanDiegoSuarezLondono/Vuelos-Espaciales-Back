@@ -5,7 +5,7 @@ import { checkRole } from '../middlewares/role';
 
 const router = Router();
 
-router.get('/', [checkJwt], TripController.getAll);
+router.get('/', [checkJwt],TripController.getAll);
 
 router.get('/:id', [checkJwt], TripController.getById);
 
