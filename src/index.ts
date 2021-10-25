@@ -1,7 +1,6 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
-import {Request, Response} from "express";
 import * as cors from 'cors';
 import * as helmet from 'helmet';
 const PORT =process.env.port || 3000;
